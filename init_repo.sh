@@ -31,6 +31,8 @@ if [[ -n "$PACKAGES" ]]; then
   pip install $=PACKAGES
 fi
 
+pip freeze > requirements.txt
+
 cat <<EOF > .gitignore
 venv/
 .env
