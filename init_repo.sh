@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+OPEN_VSCODE=false
+if [[ "$1" == "-v" ]]; then
+  OPEN_VSCODE=true
+fi
+
 while true; do
   read "FOLDER_NAME?Please input repo name: "
   if [ -d "$FOLDER_NAME" ]; then
@@ -38,3 +43,7 @@ venv/
 .env
 __pycache__/
 EOF
+
+if $OPEN_VSCODE; then
+  code .
+fi
